@@ -35,6 +35,31 @@
         ]
       }
     },
+    "download": {
+      "executor": "./dist/packages/nx-http:download",
+      "options": {
+        "url": "http://ipv4.download.thinkbroadband.com/20MB.zip",
+        "targetPath": "./fileoutput/test-download.zip"
+      }
+    },
+    "hook": {
+      "executor": "./dist/packages/nx-http:request",
+      "options": {
+        "url": "https://webhook.site/5c0e348f-d188-4e54-8f6f-79efc75a87fe",
+        "method": "POST",
+        "data": {
+          "custom": "data"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "query": {
+          "queryparam1": "1",
+          "queryparam2": "2"
+        },
+        "responseFilePath": "./fileoutput/test-hook.json"
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
