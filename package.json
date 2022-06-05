@@ -10,7 +10,8 @@
     "@nrwl/nx-plugin": "^14.1.9",
     "axios": "^0.27.2",
     "form-data": "^4.0.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@nrwl/devkit": "14.1.9"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
@@ -18,7 +19,6 @@
     "@jscutlery/semver": "^2.25.1",
     "@koa/multer": "^3.0.0",
     "@nrwl/cli": "14.1.9",
-    "@nrwl/devkit": "14.1.9",
     "@nrwl/eslint-plugin-nx": "14.1.9",
     "@nrwl/jest": "14.1.9",
     "@nrwl/js": "14.1.9",
