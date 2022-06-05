@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/@ndrsg%2Fnx-http.svg)](https://badge.fury.io/js/@ndrsg%2Fnx-http)
+
 # @ndrsg/nx-http
 
 A @nrwl/nx plugin for executing http-requests e.g. for webhooks or API calls, file upload and file download
