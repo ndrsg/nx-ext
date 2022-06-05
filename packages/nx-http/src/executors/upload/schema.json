@@ -4,6 +4,19 @@
   "title": "Upload executor",
   "description": "",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+  "url": {
+      "type": "string",
+      "description": "The url of the file to download"
+    },
+    "sourcePath": {
+      "type": "string",
+      "description": "the target, e.g. /tmp/myfile.db"
+    },
+    "headers": {
+      "type": "object",
+      "description": "headers to send with the download request"
+    }
+  },
+  "required": ["url", "sourcePath"]
 }
