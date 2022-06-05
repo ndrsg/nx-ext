@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "executors": {
+    "build": {
+      "implementation": "./src/executors/build/executor",
+      "schema": "./src/executors/build/schema.json",
+      "description": "build executor"
+    },
+    "download": {
+      "implementation": "./src/executors/download/executor",
+      "schema": "./src/executors/download/schema.json",
+      "description": "Downloads a file"
+    }
+  }
+}

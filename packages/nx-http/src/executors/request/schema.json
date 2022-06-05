@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Http Request executor",
+  "description": "Executes an http request",
+  "type": "object",
+  "properties": {
+    "method": {
+      "type": "string",
+      "default": "GET",
+      "description": "Request method",
+      "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    },
+    "url": {
+      "type": "string",
+      "description": "The url where the request should go"
+    },
+    "baseUrl": {
+      "type": "string",
+      "description": "A baseUrl, for better readability"
+    },
+    "data": {
+      "type": "object",
+      "description": "Request data to send with the request"
+    },
+    "headers": {
+      "type": "object",
+      "description": "Request headers"
+    },
+    "query": {
+      "type": "object",
+      "description": "Query to append to the url .. ?number=42"
+    },
+    "responseFilePath": {
+      "type": "string",
+      "description": "a path, where you can optionally write the response"
+    },
+    "acceptCodes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "uniqueItems": true,
+      "description": "accepted http-respose codes that you will accept. If not provided, the executor fails for response codes >= 400"
+    }
+  },
+  "required": ["url"]
+}

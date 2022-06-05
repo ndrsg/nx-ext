@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Download executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "The url of the file to download"
+    },
+    "targetPath": {
+      "type": "string",
+      "description": "the target, e.g. /tmp/myfile.db"
+    },
+    "headers": {
+      "type": "object",
+      "description": "headers to send with the download request"
+    }
+  },
+  "required": ["url", "targetPath"]
+}
