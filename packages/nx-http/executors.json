@@ -10,6 +10,11 @@
       "implementation": "./src/executors/download/executor",
       "schema": "./src/executors/download/schema.json",
       "description": "Downloads a file"
+    },
+    "upload": {
+      "implementation": "./src/executors/upload/executor",
+      "schema": "./src/executors/upload/schema.json",
+      "description": "Uploads a file via http"
     }
   }
 }
