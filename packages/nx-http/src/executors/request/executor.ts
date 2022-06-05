@@ -2,7 +2,7 @@ import { RequestExecutorSchema } from './schema';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { URLSearchParams } from 'url';
 import { logger } from '@nrwl/devkit'
-import { fstat, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 
 export default async function runExecutor(options: RequestExecutorSchema) {
   
@@ -63,7 +63,7 @@ export default async function runExecutor(options: RequestExecutorSchema) {
 
 function writeResponseToFile(path: string, response: AxiosResponse<any, any>) {
   const data = response.data;
-  const [ contentType, ...ec ] = response.headers['content-type']?.split("; ");
+  const [ contentType ] = response.headers && response.headers['content-type'] ? response.headers['content-type'].split("; ") : "";
 
   switch (contentType) {
     case "text/plain":

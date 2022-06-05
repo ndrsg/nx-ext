@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json.schemastore.org/renovate",
+    "extends": ["config:base", ":semanticCommitScopeDisabled"],
+    "automerge": true,
+    "automergeType": "branch",
+    "baseBranches": ["main"],
+    "updateInternalDeps": true,
+    "lockFileMaintenance": {
+      "enabled": true,
+      "automerge": true,
+      "automergeType": "branch",
+      "commitMessageAction": "📦 lock file maintenance",
+      "semanticCommitType": "build"
+    },
+    "rangeStrategy": "update-lockfile",
+    "commitMessageAction": "📦 bump",
+    "packageRules": [
+      {
+        "matchPackagePatterns": ["^@angular/", "^@nrwl/", "nx"],
+        "groupName": "Nrwl workspace",
+        "enabled": false
+      },
+      {
+        "matchPackagePatterns": ["*"],
+        "semanticCommitType": "build"
+      },
+      {
+        "matchDepTypes": ["dependencies", "require"],
+        "semanticCommitType": "fix"
+      }
+    ]
+  }
