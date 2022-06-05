@@ -21,11 +21,11 @@ runs:
       # like NPM_CONFIG_REGISTRY so npm publish ends up ignoring the .npmrc file
       # which is set up by `setup-node` action.
       shell: bash
-      run: npx nx affected --base=last-release --target=version
+      run: npx nx affected --base=$(git show-ref --tags | grep release- | tail -n 1 | sed 's~.* refs/tags/~~') --target=version
 
-    - name: Tag last-release
+    - name: Tag release
       shell: bash
-      run: git tag -f last-release
+      run: git tag -f release-$(date '+%d-%m-%Y-%H-%M-%S')
 
     - name: Push changes
       uses: ad-m/github-push-action@master
