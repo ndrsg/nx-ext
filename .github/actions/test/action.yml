@@ -26,7 +26,7 @@ runs:
       run: npx nx test nx-http --code-coverage
     - name: E2E
       shell: bash
-      run: npx nx affected:e2e --headless --base=last-release
+      run: npx nx affected:e2e --base=last-release
     - name: Codecov upload
       uses: codecov/codecov-action@v2
       with:
