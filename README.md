@@ -1,4 +1,7 @@
-[![npm version](https://badge.fury.io/js/@ndrsg%2Fnx-http.svg)](https://badge.fury.io/js/@ndrsg%2Fnx-http)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ndrsg/nx-ext/Test)
+[![codecov](https://codecov.io/gh/ndrsg/nx-ext/branch/main/graph/badge.svg?token=GQVAC57U3Q)](https://codecov.io/gh/ndrsg/nx-ext)
+![npm](https://img.shields.io/npm/v/@ndrsg/nx-http?label=%40ndrsg%2Fnx-http)
+![npm](https://img.shields.io/npm/dw/@ndrsg/nx-http?label=downloads%20%40ndrsg%2Fnx-http)
 
 # @ndrsg/nx-http
 
