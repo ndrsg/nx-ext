@@ -2,11 +2,15 @@ import { DownloadExecutorSchema } from './schema';
 import executor from './executor';
 import { MockServer } from 'jest-mock-server';
 import { createReadStream, readFileSync } from 'fs';
+import axios from 'axios';
 
 describe('Download Executor', () => {
   const server = new MockServer();
 
-  beforeAll(() => server.start());
+  beforeAll(async () => {
+    axios.defaults.adapter = require('axios/lib/adapters/http');
+    await server.start();
+  });
   afterAll(() => server.stop());
   beforeEach(() => server.reset());
 

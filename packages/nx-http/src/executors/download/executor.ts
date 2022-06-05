@@ -1,7 +1,7 @@
 import { DownloadExecutorSchema } from './schema';
-import { createWriteStream } from 'fs';
-import { get } from 'http';
+import { createWriteStream, ReadStream } from 'fs';
 import { logger } from '@nrwl/devkit';
+import axios from 'axios';
 
 export default async function runExecutor(
   options: DownloadExecutorSchema,
@@ -13,30 +13,29 @@ export default async function runExecutor(
 
   const file = createWriteStream(options.targetPath);
 
+  const response = await axios.get<ReadStream>(url, { headers, responseType: "stream" });
+  if(response.status >= 400) {
+    throw new Error("Response error: " + response.status)
+  }
+
+  response.data.pipe(file);
+
+  const size = parseInt(response.headers['content-length'], 10);
+  let downloaded = 0;
+
+  response.data.on("data", (data: Uint8Array) => {
+    downloaded += data.length;
+    logger.debug(`Downloading ${url} ${downloaded}/${size} bytes - ${(100.0 * downloaded / size).toFixed(2)} %`);
+  })
+  
   await new Promise<void>((resolve, reject) => {
-    get(url, { headers }, function(response) {
-      
-      if(response.statusCode >= 400) {
-        reject("Response error: " + response.statusCode)
-      }
-      response.pipe(file);
-      
-      const size = parseInt(response.headers['content-length'], 10);
-      let downloaded = 0;
-  
-      response.on("data", (data: Uint8Array) => {
-        downloaded += data.length;
-        logger.debug(`Downloading ${url} ${downloaded}/${size} bytes - ${(100.0 * downloaded / size).toFixed(2)} %`);
-      })
-  
-      file.on("finish", () => {
-        file.close();
-        logger.debug("Download of " + url + " finished to " + filePath);
-        resolve();
-      });
+    file.on("finish", () => {
+      file.close();
+      logger.debug("Download of " + url + " finished to " + filePath);
+      resolve();
     });
   });
-  
+
   return {
     success: true
   }
