@@ -16,5 +16,6 @@
         "accessToken": "ZmJjNjJkNzAtMmFlOS00NjY0LTlkNmUtOTZlMzliNmUyNmMzfHJlYWQtd3JpdGU="
       }
     }
-  }
+  },
+  "defaultProject": "nx-http"
 }
