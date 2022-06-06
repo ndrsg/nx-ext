@@ -10,5 +10,20 @@
   },
   "repository": {
     "url": "https://github.com/ndrsg/nx-ext"
-  }
+  },
+  "homepage": "https://github.com/ndrsg/nx-ext/tree/main/packages/nx-http",
+  "author": {
+    "name": "ndrsg",
+    "email": "26137827+ndrsg@users.noreply.github.com",
+    "url": "https://github.com/ndrsg"
+  },
+  "keywords": [
+    "nx",
+    "nx-plugin",
+    "http",
+    "webhooks",
+    "upload",
+    "download",
+    "executor"
+  ]
 }

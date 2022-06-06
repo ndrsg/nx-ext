@@ -6,7 +6,10 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notes": "${notes}"
+        "notes": "${notes}",
+        "files": [
+          "https://www.npmjs.com/package/@ndrsg/nx-http/v/${version}"
+        ]
       }
     },
     "publish": {
@@ -23,7 +26,8 @@
         "main": "packages/nx-http/src/index.ts",
         "tsConfig": "packages/nx-http/tsconfig.lib.json",
         "assets": [
-          "packages/nx-http/*.md",
+          "README.md",
+          "packages/nx-http/CHANGELOG.md",
           {
             "input": "./packages/nx-http/src",
             "glob": "**/!(*.ts)",
