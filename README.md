@@ -59,7 +59,7 @@ nx run project-name:upload
   "projectType": "...",
   "targets": {
     "upload": {
-      "executor": "@ndrsg/nx-http:request",
+      "executor": "@ndrsg/nx-http:upload",
       "options": {
         "url": "https://webhook.site/5c0e348f-d188-4e54-8f6f-79efc75a87fe/07cbd7de-0b89-412a-b29f-66ec78f1693b",
         "sourcePath": "./packages/nx-http/README.md",
@@ -83,7 +83,7 @@ nx run project-name:download
   "projectType": "...",
   "targets": {
     "download": {
-      "executor": "@ndrsg/nx-http:request",
+      "executor": "@ndrsg/nx-http:download",
       "options": {
         "url": "https://webhook.site/token/5c0e348f-d188-4e54-8f6f-79efc75a87fe/request/0138ee58-d9a2-408e-b303-07557c759bfb/download/32702fb1-135f-4fd1-bcb0-a3fecda98a26",
         "targetPath": "./fileoutput/download.md"
