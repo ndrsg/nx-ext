@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.3](https://github.com/ndrsg/nx-ext/compare/nx-http-0.1.2...nx-http-0.1.3) (2022-06-06)
+
 ### [0.1.2](https://github.com/ndrsg/nx-ext/compare/nx-http-0.1.1...nx-http-0.1.2) (2022-06-06)
 
 
