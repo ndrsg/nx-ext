@@ -21,7 +21,6 @@ nx run project-name:hook
 ```
 ```json
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "...",
   "projectType": "...",
   "targets": {
@@ -54,7 +53,6 @@ nx run project-name:upload
 ```
 ```json
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "...",
   "projectType": "...",
   "targets": {
@@ -78,7 +76,6 @@ nx run project-name:download
 ```
 ```json
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "...",
   "projectType": "...",
   "targets": {
