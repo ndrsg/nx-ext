@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.2](https://github.com/ndrsg/nx-ext/compare/nx-http-0.1.1...nx-http-0.1.2) (2022-06-06)
+
+
+### Bug Fixes
+
+* **nx-http:** remove non-existent generator ([4e1e72d](https://github.com/ndrsg/nx-ext/commit/4e1e72d4511bf87515426a59313ef84d46e7d84e))
+
 ### [0.1.1](https://github.com/ndrsg/nx-ext/compare/nx-http-0.1.0...nx-http-0.1.1) (2022-06-05)
 
 ## 0.1.0 (2022-06-05)
