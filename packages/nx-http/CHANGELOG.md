@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/ndrsg/nx-ext/compare/nx-http-0.2.0...nx-http-0.3.0) (2022-06-07)
+
+
+### Features
+
+* **nx-http:** env subst for options ([30a732d](https://github.com/ndrsg/nx-ext/commit/30a732de58e7ef6c52ef4e786746cf6aafe32977))
+
 ## [0.2.0](https://github.com/ndrsg/nx-ext/compare/nx-http-0.1.3...nx-http-0.2.0) (2022-06-07)
 
 
