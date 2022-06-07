@@ -2,25 +2,46 @@ import { RequestExecutorSchema } from './schema';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { URLSearchParams } from 'url';
 import { logger } from '@nrwl/devkit'
-import { writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 
 export default async function runExecutor(options: RequestExecutorSchema) {
   
   logger.debug(options);
 
   const headers = {
-    'content-type': 'application/json',
     ...options.headers
   }
 
-  Object.keys(headers).forEach(_header => {
-    headers[_header.toLowerCase()] = headers[_header];
-    delete headers[_header]
-  });
+  // Object.keys(headers).forEach(_header => {
+  //   headers[_header.toLowerCase()] = headers[_header];
+  //   delete headers[_header]
+  // });
   
-  const data = headers['content-type'] === 'application/x-www-form-urlencoded'
-    ? options.data && new URLSearchParams(options.data as Record<string, string>)
-    : options.data
+  let data: Record<string, unknown> | URLSearchParams | string = headers['Content-Type'] === 'application/x-www-form-urlencoded'
+    ? options.data && typeof options.data === "object" && new URLSearchParams(options.data as Record<string, string>)
+    : options.data;
+
+  if(data && options.fromFile) {
+    logger.warn("Cannot read body from file, hence data is already set");
+  } else if(options.fromFile) {
+    data = readFileSync(options.fromFile).toString();
+  }
+
+  if(!headers['Content-Type'] && options.fromFile) {
+    headers['Content-Type'] = "text/plain; charset=UTF-8";
+
+    switch (options.fromFile.split(".").pop()) {
+      case "json":
+        headers['Content-Type'] = "application/json";
+        break;
+      case "htm":
+      case "html":
+        headers['Content-Type'] = "text/html; charset=UTF-8"
+        break;
+      default:
+        break;
+    }
+  }
 
   const response = await axios.request({
     baseURL: options.baseUrl,

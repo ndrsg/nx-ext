@@ -23,6 +23,10 @@
       "type": "object",
       "description": "Request data to send with the request"
     },
+    "fromFile": {
+      "type": "string",
+      "description": "Read the request body from a file"
+    },
     "headers": {
       "type": "object",
       "description": "Request headers"

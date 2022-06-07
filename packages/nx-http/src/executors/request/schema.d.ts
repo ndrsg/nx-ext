@@ -3,6 +3,7 @@ export interface RequestExecutorSchema {
     url: string,
     baseUrl?: string,
     data?: Record<string, unknown>,
+    fromFile?: string,
     headers?: Record<string, string>,
     query?: Record<string, string>,
     responseFilePath?: string,

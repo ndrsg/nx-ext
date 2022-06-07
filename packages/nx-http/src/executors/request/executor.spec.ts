@@ -128,4 +128,41 @@ describe('Request Executor', () => {
     const output = await executor({ ...options, ...additionalOptions});
     expect(output.success).toBe(true);
   });
+
+
+  it('reads body from json file', async () => {
+    mock.onPost(options.baseUrl + options.url).reply(200);
+
+    const fromFileOptions: Partial<RequestExecutorSchema> = {
+      method: "POST",
+      fromFile: "./testfiles/body.json"
+    }
+    const output = await executor({ ...options, ...fromFileOptions});
+
+    const fileContent = readFileSync(fromFileOptions.fromFile).toString();
+    
+    const request = mock.history.post[0];
+    expect(request.data).toEqual(fileContent);
+    expect(request.headers['Content-Type']).toBe("application/json");
+    expect(output.success).toBe(true);
+  });
+
+  it('reads body from html file', async () => {
+
+    mock.onPost(options.baseUrl + options.url).reply(200);
+
+    const fromFileOptions: Partial<RequestExecutorSchema> = {
+      method: "POST",
+      fromFile: "./testfiles/body.html"
+    }
+    const output = await executor({ ...options, ...fromFileOptions});
+
+    
+    const fileContent = readFileSync(fromFileOptions.fromFile).toString();
+    
+    const request = mock.history.post[0];
+    expect(request.data).toEqual(fileContent);
+    expect(request.headers['Content-Type']).toBe("text/html; charset=UTF-8");
+    expect(output.success).toBe(true);
+  });
 });
