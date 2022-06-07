@@ -13,19 +13,19 @@ runs:
   steps:
     - name: Commitlint
       shell: bash
-      run: npx commitlint --from=$(git show-ref --tags | grep release- | tail -n 1 | sed 's~.* refs/tags/~~')
+      run: npx commitlint --from=$(git tag --sort=committerdate | grep release- | tail -n 1)
     - name: Lint
       shell: bash
-      run: npx nx affected:lint --base=$(git show-ref --tags | grep release- | tail -n 1 | sed 's~.* refs/tags/~~')
+      run: npx nx affected:lint --base=$(git tag --sort=committerdate | grep release- | tail -n 1)
     - name: Build
       shell: bash
-      run: npx nx affected:build --base=$(git show-ref --tags | grep release- | tail -n 1 | sed 's~.* refs/tags/~~')
+      run: npx nx affected:build --base=$(git tag --sort=committerdate | grep release- | tail -n 1)
     - name: Test
       shell: bash
-      run: npx nx affected:test --code-coverage --base=$(git show-ref --tags | grep release- | tail -n 1 | sed 's~.* refs/tags/~~')
+      run: npx nx affected:test --code-coverage --base=$(git tag --sort=committerdate | grep release- | tail -n 1)
     - name: E2E
       shell: bash
-      run: npx nx affected:e2e --base=$(git show-ref --tags | grep release- | tail -n 1 | sed 's~.* refs/tags/~~')
+      run: npx nx affected:e2e --base=$(git tag --sort=committerdate | grep release- | tail -n 1)
     - name: Codecov upload
       uses: codecov/codecov-action@v2
       with:
