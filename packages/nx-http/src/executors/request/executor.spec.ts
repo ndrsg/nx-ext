@@ -185,4 +185,23 @@ describe('Request Executor', () => {
     expect(request.headers['Content-Type']).toBe("application/json");
     expect(output.success).toBe(true);
   });
+
+  it('envsubsts options', async () => {
+
+    mock.onGet(options.baseUrl + options.url).reply(200);
+
+    process.env["AUTH_TOKEN"] = "abcde"
+
+    const fromFileOptions: Partial<RequestExecutorSchema> = {
+      headers: {
+        Authorization: "Bearer $AUTH_TOKEN"
+      }
+    }
+    const output = await executor({ ...options, ...fromFileOptions});
+    
+    const request = mock.history.get[0];
+
+    expect(request.headers['Authorization']).toBe("Bearer abcde");
+    expect(output.success).toBe(true);
+  });
 });

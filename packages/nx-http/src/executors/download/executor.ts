@@ -2,10 +2,13 @@ import { DownloadExecutorSchema } from './schema';
 import { createWriteStream, ReadStream } from 'fs';
 import { logger } from '@nrwl/devkit';
 import axios from 'axios';
+import { envSubstValues } from '../../common/envsubst';
 
 export default async function runExecutor(
   options: DownloadExecutorSchema,
 ) {
+
+  options = envSubstValues(options, process.env);
   
   const filePath = options.targetPath;
   const url = options.url;

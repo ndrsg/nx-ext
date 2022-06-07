@@ -3,9 +3,16 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { URLSearchParams } from 'url';
 import { logger } from '@nrwl/devkit'
 import { readFileSync, writeFileSync } from 'fs';
-import { envSubst } from '../../common/envsubst';
+import { envSubst, envSubstValues } from '../../common/envsubst';
 
 export default async function runExecutor(options: RequestExecutorSchema) {
+
+  // get data before env-substing for seperate handling  
+  let data: Record<string, unknown> | URLSearchParams | string = options.data;
+
+  options = envSubstValues(options, { 
+    ...process.env
+  });
   
   logger.debug(options);
 
@@ -13,7 +20,6 @@ export default async function runExecutor(options: RequestExecutorSchema) {
     ...options.headers
   }
 
-  let data: Record<string, unknown> | URLSearchParams | string = options.data;
 
   if(data && options.fromFile) {
     logger.warn("Cannot read body from file, hence data is already set");

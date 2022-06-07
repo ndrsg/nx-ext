@@ -14,6 +14,9 @@ npm install --save-dev @ndrsg/nx-http
 ```
 
 ## Usage
+You can use system environment variables in all option values, e.g. for setting up an 'Authorization' header.\
+But options.env is only used for request-data!
+
 ### Webhooks
 
 ```bash
@@ -49,6 +52,9 @@ nx run project-name:hook
         "url": "/home",
         "method": "POST",
         "fromFile": "./testfiles/template.html",
+        "headers": {
+          "Authorization": "Bearer $CI_AUTHORIZATION_TOKEN"
+        },
         "systemEnv": true,
         "env": {
           "CONTENT": "<p>Released nx-http</p>"

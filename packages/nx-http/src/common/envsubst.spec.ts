@@ -1,4 +1,4 @@
-import { envSubst } from './envsubst';
+import { envSubst, envSubstValues } from './envsubst';
 
 describe('Request Executor', () => {
   
@@ -52,5 +52,36 @@ describe('Request Executor', () => {
 
     expect(output).toEqual({ $SOME: "$THING", any: ["string", "hello", "world"]});
   })
+
+  it("substitutes values only", () => {
+    const input = {
+      $TEST: [
+        "${TEST}",
+        "${TEST2}"
+      ],
+      nested: {
+        structure: {
+          value: "$TEST"
+        }
+      }
+    }
+
+    const output = envSubstValues(input, {
+      TEST: "HELLO",
+      TEST2: "WORLD"
+    })
+
+    expect(output).toEqual({
+      $TEST: [
+        "HELLO",
+        "WORLD"
+      ],
+      nested: {
+        structure: {
+          value: "HELLO"
+        }
+      }
+    })
+  });
 
 });
