@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "nx-http": "./packages/nx-http",
+    "nx-http-e2e": "./packages/nx-http-e2e"
+  }
+}
