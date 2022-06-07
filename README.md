@@ -41,9 +41,43 @@ nx run project-name:hook
         },
         "responseFilePath": "./fileoutput/test-hook.json"
       }
+    },
+    "create-page": {
+      "executor": "@ndrsg/nx-http:request",
+      "options": {
+        "baseUrl": "https://my-wiki",
+        "url": "/home",
+        "method": "POST",
+        "fromFile": "./testfiles/template.html",
+        "systemEnv": true,
+        "env": {
+          "CONTENT": "<p>Released nx-http</p>"
+        }
+      },
+      "configurations": {
+        "dev": {
+          "url": "/dev",
+          "env": {
+            "CONTENT": "<p>Realeased nx-http DEV</p>"
+          }
+        }
+      }
     }
   }
 }
+```
+template.html for nx run my-project:create-page
+```html
+<html>
+  <body>
+    <div>
+      $CONTENT
+    </div>
+    <div>
+      $CI_BRANCH_NAME
+    </div>
+  </body>
+</html>
 ```
 
 ### File Upload

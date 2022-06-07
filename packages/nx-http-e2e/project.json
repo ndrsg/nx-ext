@@ -27,6 +27,27 @@
         "responseFilePath": "./fileoutput/test-hook.json"
       }
     },
+    "create-page": {
+      "executor": "@ndrsg/nx-http:request",
+      "options": {
+        "baseUrl": "https://my-wiki",
+        "url": "prod",
+        "method": "POST",
+        "fromFile": "./testfiles/template.html",
+        "systemEnv": true,
+        "env": {
+          "CONTENT": "<p>Released nx-http</p>"
+        }
+      },
+      "configurations": {
+        "dev": {
+          "url": "dev",
+          "env": {
+            "CONTENT": "<p>Realeased nx-http DEV</p>"
+          }
+        }
+      }
+    },
     "upload": {
       "executor": "@ndrsg/nx-http:upload",
       "options": {
