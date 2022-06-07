@@ -157,7 +157,6 @@ describe('Request Executor', () => {
     }
     const output = await executor({ ...options, ...fromFileOptions});
 
-    
     const fileContent = readFileSync(fromFileOptions.fromFile).toString();
     
     const request = mock.history.post[0];
