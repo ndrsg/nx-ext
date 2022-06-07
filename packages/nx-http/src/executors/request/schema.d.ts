@@ -7,5 +7,7 @@ export interface RequestExecutorSchema {
     headers?: Record<string, string>,
     query?: Record<string, string>,
     responseFilePath?: string,
-    acceptCodes?: number[]
+    acceptCodes?: number[],
+    env?: Record<string, string>, 
+    systemEnv?: boolean,
 } // eslint-disable-line

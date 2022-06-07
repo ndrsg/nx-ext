@@ -46,6 +46,14 @@
       },
       "uniqueItems": true,
       "description": "accepted http-respose codes that you will accept. If not provided, the executor fails for response codes >= 400"
+    },
+    "env": {
+      "type": "object",
+      "description": "specify variables, that should be replaced in your data or fromFile-data. { VARIABLE: \"hello\" } will replace ALL $VARIABLE and ${VARIABLE} in your request data. Variables that are not found will be left as they are"
+    },
+    "systemEnv": {
+      "type": "boolean",
+      "description": "wether to replace $VAR in your data and fromFile-data with system environment variables, e.g. replace $CI_BRANCH_NAME or ${CI_BRANCH_NAME} in your template"
     }
   },
   "required": ["url"]

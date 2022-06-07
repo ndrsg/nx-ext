@@ -3,6 +3,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { URLSearchParams } from 'url';
 import { logger } from '@nrwl/devkit'
 import { readFileSync, writeFileSync } from 'fs';
+import { envSubst } from '../../common/envsubst';
 
 export default async function runExecutor(options: RequestExecutorSchema) {
   
@@ -12,19 +13,24 @@ export default async function runExecutor(options: RequestExecutorSchema) {
     ...options.headers
   }
 
-  // Object.keys(headers).forEach(_header => {
-  //   headers[_header.toLowerCase()] = headers[_header];
-  //   delete headers[_header]
-  // });
-  
-  let data: Record<string, unknown> | URLSearchParams | string = headers['Content-Type'] === 'application/x-www-form-urlencoded'
-    ? options.data && typeof options.data === "object" && new URLSearchParams(options.data as Record<string, string>)
-    : options.data;
+  let data: Record<string, unknown> | URLSearchParams | string = options.data;
 
   if(data && options.fromFile) {
     logger.warn("Cannot read body from file, hence data is already set");
   } else if(options.fromFile) {
     data = readFileSync(options.fromFile).toString();
+  }
+
+  if(options.env) {
+    data = envSubst(data, options.env);
+  }
+
+  if(options.systemEnv) {
+    data = envSubst(data, process.env);
+  }
+
+  if(headers['Content-Type'] === 'application/x-www-form-urlencoded' && options.data && typeof options.data === "object") {
+    data = new URLSearchParams(options.data as Record<string, string>);
   }
 
   if(!headers['Content-Type'] && options.fromFile) {

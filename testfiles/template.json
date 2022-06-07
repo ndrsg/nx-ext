@@ -1,0 +1,9 @@
+{
+  "awesome": "json",
+  "body": {
+    "data": [
+      "$CONTENT"
+    ],
+    "value": true
+  }
+}
