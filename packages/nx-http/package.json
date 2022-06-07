@@ -6,7 +6,7 @@
   "executors": "./executors.json",
   "license": "MIT",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "repository": {
     "url": "https://github.com/ndrsg/nx-ext"
@@ -16,6 +16,9 @@
     "name": "ndrsg",
     "email": "26137827+ndrsg@users.noreply.github.com",
     "url": "https://github.com/ndrsg"
+  },
+  "peerDependencies": {
+    "@nrwl/devkit": "^14.0.0"
   },
   "keywords": [
     "nx",

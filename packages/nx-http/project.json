@@ -6,10 +6,7 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notes": "${notes}",
-        "files": [
-          "https://www.npmjs.com/package/@ndrsg/nx-http/v/${version}"
-        ]
+        "notes": "${notes}"
       }
     },
     "publish": {
@@ -25,6 +22,8 @@
         "outputPath": "dist/packages/nx-http",
         "main": "packages/nx-http/src/index.ts",
         "tsConfig": "packages/nx-http/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true,
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
           "README.md",
           "packages/nx-http/CHANGELOG.md",
