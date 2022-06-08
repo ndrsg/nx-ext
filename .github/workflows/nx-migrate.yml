@@ -36,7 +36,7 @@ jobs:
 
       - name: Run @nrwl/workspace migrations
         if: steps.nrwl-workspace-has-migrations.outputs.has_migrations == 'true'
-        run: npm nx migrate --run-migrations
+        run: npx nx migrate --run-migrations
 
       - name: Test
         id: test
@@ -77,4 +77,4 @@ jobs:
             gh pr create -t "Update @nrwl/workspace" -b "Update @nrwl/workspace dependencies to ${LAST_VERSION}."
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.MIGRATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
