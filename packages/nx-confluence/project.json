@@ -2,6 +2,32 @@
   "sourceRoot": "packages/nx-confluence/src",
   "projectType": "library",
   "targets": {
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "push": true,
+        "noVerify": true,
+        "postTargets": [
+          "nx-confluence:publish",
+          "nx-confluence:github"
+        ]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}",
+        "title": "@ndrsg/nx-confluence@${version}"
+      }
+    },
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
