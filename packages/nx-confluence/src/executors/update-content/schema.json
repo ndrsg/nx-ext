@@ -24,6 +24,7 @@
     "fromFile": {
       "description": "how you want to treat the 'content'. Usually this is 'autodetect'.",
       "type": ["boolean", "string"],
+      "enum": [ true, false, "autodetect" ],
       "default": "autodetect"
     },
     "beforeContent": {
@@ -33,6 +34,11 @@
     "afterContent": {
       "description": "something you want to append to you content, e.g. a macro-wrapper half",
       "type": "string"
+    },
+    "contentConvert": {
+      "description": "conversion of content before pushing and BEFORE prepending + appending 'beforeContent' and 'afterContent'.",
+      "type": "string",
+      "enum": ["md2html+highlight.js", "md2html"]
     },
     "headers": {
       "description": "headers you want to use with the API, e.g. Authorization header. Env-Vars are supported.",

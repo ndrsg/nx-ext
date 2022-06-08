@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { existsSync, readFileSync } from 'fs';
 import { UpdateContentExecutorSchema } from './schema';
-import { envSubstValues } from '@ndrsg/devkit';
+import { envSubstValues, mdToHtml, getHighlightCss } from '@ndrsg/devkit';
 import { logger } from '@nrwl/devkit';
 
 export default async function runExecutor(options: UpdateContentExecutorSchema) {
@@ -11,7 +11,19 @@ export default async function runExecutor(options: UpdateContentExecutorSchema) 
     existsSync(options.content) ? options.fromFile = true : options.fromFile = false;
   }
 
-  const content = options.fromFile ? readFileSync(options.content).toString() : options.content;
+  let content = options.fromFile ? readFileSync(options.content).toString() : options.content;
+
+  switch (options.contentConvert) {
+    case "md2html":
+      content = mdToHtml(content)
+      break;
+    case "md2html+highlight.js":
+      content = `<style>${getHighlightCss()}</style>` + mdToHtml(content);
+      break;
+    default:
+      break;
+  }
+
   const combinedContent = [
     options.beforeContent,
     content,
