@@ -7,31 +7,34 @@
   },
   "private": true,
   "dependencies": {
-    "@nrwl/nx-plugin": "14.2.1",
+    "@nrwl/devkit": "14.1.9",
+    "@nrwl/nx-plugin": "14.1.9",
     "axios": "^0.27.2",
     "form-data": "^4.0.0",
-    "tslib": "^2.3.0",
-    "@nrwl/devkit": "14.2.1"
+    "highlight.js": "^11.5.1",
+    "marked": "^4.0.16",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@jscutlery/semver": "^2.25.1",
     "@koa/multer": "^3.0.0",
-    "@nrwl/cli": "14.2.1",
-    "@nrwl/eslint-plugin-nx": "14.2.1",
-    "@nrwl/jest": "14.2.1",
-    "@nrwl/js": "14.2.1",
-    "@nrwl/linter": "14.2.1",
+    "@nrwl/cli": "14.1.9",
+    "@nrwl/eslint-plugin-nx": "14.1.9",
+    "@nrwl/jest": "14.1.9",
+    "@nrwl/js": "14.1.9",
+    "@nrwl/linter": "14.1.9",
     "@nrwl/nx-cloud": "14.0.5",
-    "@nrwl/workspace": "14.2.1",
+    "@nrwl/workspace": "14.1.9",
     "@types/express": "^4.17.13",
     "@types/jest": "27.4.1",
     "@types/koa": "^2.13.4",
+    "@types/marked": "^4.0.3",
     "@types/multer": "^1.4.7",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "5.24.0",
-    "@typescript-eslint/parser": "5.24.0",
+    "@typescript-eslint/parser": "5.18.0",
     "axios-mock-adapter": "^1.21.1",
     "commitlint": "^17.0.2",
     "eslint": "8.15.0",
@@ -42,7 +45,7 @@
     "jest-mock-server": "0.0.5",
     "multer": "^1.4.5-lts.1",
     "ngx-deploy-npm": "^3.1.9",
-    "nx": "14.2.1",
+    "nx": "14.1.9",
     "prettier": "2.6.2",
     "ts-jest": "27.1.4",
     "ts-node": "10.8.1",
@@ -53,4 +56,3 @@
     "packages/**"
   ]
 }
-
