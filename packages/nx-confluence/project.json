@@ -38,6 +38,8 @@
         "outputPath": "dist/packages/nx-confluence",
         "main": "packages/nx-confluence/src/index.ts",
         "tsConfig": "packages/nx-confluence/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true,
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
           "packages/nx-confluence/*.md",
           {
