@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ndrsg/nx-confluence": ["packages/nx-confluence/src/index.ts"],
       "@ndrsg/nx-http": ["packages/nx-http/src/index.ts"]
     }
   },
