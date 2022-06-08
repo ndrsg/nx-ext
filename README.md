@@ -1,4 +1,4 @@
-# @ndrsg/nx-http
+# @ndrsg/nx-ext
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ndrsg/nx-ext/Test)
 [![codecov](https://codecov.io/gh/ndrsg/nx-ext/branch/main/graph/badge.svg?token=GQVAC57U3Q)](https://codecov.io/gh/ndrsg/nx-ext)
 
@@ -22,6 +22,6 @@ interacting with Atlassian Confluence via REST
 ## @ndrsg/devkit
 ![npm](https://img.shields.io/npm/v/@ndrsg/devkit?label=%40ndrsg%2Fdevkit) ![npm](https://img.shields.io/npm/dw/@ndrsg/devkit?label=downloads%20%40ndrsg%2Fdevkit)
 
-helper
+helper functions. more for internal use for now.
 
-[Doc](./packages/nx-confluence/)
+[Doc](./packages/devkit/)
