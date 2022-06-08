@@ -8,6 +8,18 @@
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   },
+  "targetDependencies": {
+    "version": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      },
+      {
+        "target": "version",
+        "projects": "dependencies"
+      }
+    ]
+  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
