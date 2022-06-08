@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.1](https://github.com/ndrsg/nx-ext/compare/nx-confluence-0.1.0...nx-confluence-0.1.1) (2022-06-08)
+
+
+### Bug Fixes
+
+* **nx-confluence:** dependencies in package.json ([75c881e](https://github.com/ndrsg/nx-ext/commit/75c881e897e92683499e9d45abfba5331e5338d2))
+
 ## 0.1.0 (2022-06-08)
 
 
