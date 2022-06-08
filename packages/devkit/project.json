@@ -38,6 +38,8 @@
         "outputPath": "dist/packages/devkit",
         "main": "packages/devkit/src/index.ts",
         "tsConfig": "packages/devkit/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true,
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
           "packages/devkit/*.md"
         ]
