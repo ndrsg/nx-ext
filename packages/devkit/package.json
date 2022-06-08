@@ -1,4 +1,28 @@
 {
   "name": "@ndrsg/devkit",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "url": "https://github.com/ndrsg/nx-ext",
+    "directory": "packages/devkit"
+  },
+  "homepage": "https://github.com/ndrsg/nx-ext/tree/main/packages/devkit",
+  "author": {
+    "name": "ndrsg",
+    "email": "26137827+ndrsg@users.noreply.github.com",
+    "url": "https://github.com/ndrsg"
+  },
+  "peerDependencies": {
+    "@nrwl/devkit": "^14.0.0"
+  },
+  "keywords": [
+    "devkit",
+    "markdown",
+    "html",
+    "highlightjs"
+  ]
 }

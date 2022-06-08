@@ -1,4 +1,3 @@
-
 import { readFileSync } from 'fs';
 import { marked } from 'marked';
 import hljs from 'highlight.js';

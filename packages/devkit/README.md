@@ -1,11 +1,12 @@
-# devkit
+# @ndrsg/devkit
+Helper functions for development of @ndrsg packages.
 
-This library was generated with [Nx](https://nx.dev).
+## envsubst
+Substitution of environment variables in objects and strings.
 
-## Building
+## markdown
+Conversion functions for markdown to html.
+Thanks to [highlight.js](https://highlightjs.org/) with syntax highlighting support.
 
-Run `nx build devkit` to build the library.
-
-## Running unit tests
-
-Run `nx test devkit` to execute the unit tests via [Jest](https://jestjs.io).
+## Usage
+see tests
