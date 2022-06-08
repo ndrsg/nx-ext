@@ -41,8 +41,7 @@
         "updateBuildableProjectDepsInPackageJson": true,
         "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
-          "README.md",
-          "packages/nx-http/CHANGELOG.md",
+          "packages/nx-http/*.md",
           {
             "input": "./packages/nx-http/src",
             "glob": "**/!(*.ts)",

@@ -1,4 +1,7 @@
 # @ndrsg/devkit
+![npm](https://img.shields.io/npm/v/@ndrsg/devkit?label=%40ndrsg%2Fdevkit)
+![npm](https://img.shields.io/npm/dw/@ndrsg/devkit)
+
 Helper functions for development of @ndrsg packages.
 
 ## envsubst

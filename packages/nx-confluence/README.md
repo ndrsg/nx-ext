@@ -1,4 +1,8 @@
-# nx-confluence
+# @ndrsg/nx-confluence
+![npm](https://img.shields.io/npm/v/@ndrsg/nx-confluence?label=%40ndrsg%2Fnx-confluence)
+![npm](https://img.shields.io/npm/dw/@ndrsg/nx-confluence)
+
+
 
 Nx executor to interact with Atlassian Confluence via its "REST" Api
 
