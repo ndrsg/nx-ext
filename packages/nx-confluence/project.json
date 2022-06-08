@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-confluence/src",
   "projectType": "library",
   "targets": {
@@ -30,7 +31,9 @@
     },
     "build": {
       "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/packages/nx-confluence",
         "main": "packages/nx-confluence/src/index.ts",
@@ -62,14 +65,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/nx-confluence/**/*.ts"]
+        "lintFilePatterns": [
+          "packages/nx-confluence/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/nx-confluence"],
+      "outputs": [
+        "coverage/packages/nx-confluence"
+      ],
       "options": {
         "jestConfig": "packages/nx-confluence/jest.config.ts",
         "passWithNoTests": true

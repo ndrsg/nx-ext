@@ -3,5 +3,31 @@
   "version": "0.0.1",
   "main": "src/index.js",
   "generators": "./generators.json",
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "url": "https://github.com/ndrsg/nx-ext",
+    "directory": "packages/nx-confluence"
+  },
+  "homepage": "https://github.com/ndrsg/nx-ext/tree/main/packages/nx-confluence",
+  "author": {
+    "name": "ndrsg",
+    "email": "26137827+ndrsg@users.noreply.github.com",
+    "url": "https://github.com/ndrsg"
+  },
+  "dependencies": {
+    "@ndrsg/devkit": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@nrwl/devkit": "^14.0.0"
+  },
+  "keywords": [
+    "nx",
+    "nx-plugin",
+    "confluence",
+    "executor"
+  ]
 }

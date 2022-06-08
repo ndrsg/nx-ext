@@ -4,6 +4,40 @@
   "title": "Build executor",
   "description": "",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+    "baseUrl": {
+      "description": "the base url of the conluence REST api (everything before /rest/.. )",
+      "type": "string"
+    },
+    "content": {
+      "description": "the content you want to publish, can be a string or a filePath to a file that will be read.",
+      "type": "string"
+    },
+    "contentId": {
+      "description": "id of the content, that you want to update. it has to exist before to be updatable..",
+      "type": "string"
+    },
+    "title": {
+      "description": "title of the conent site. has to be unique in the space",
+      "type": "string"
+    },
+    "fromFile": {
+      "description": "how you want to treat the 'content'. Usually this is 'autodetect'.",
+      "type": ["boolean", "string"],
+      "default": "autodetect"
+    },
+    "beforeContent": {
+      "description": "something you want to prepend to you content, e.g. a macro-wrapper half",
+      "type": "string"
+    },
+    "afterContent": {
+      "description": "something you want to append to you content, e.g. a macro-wrapper half",
+      "type": "string"
+    },
+    "headers": {
+      "description": "headers you want to use with the API, e.g. Authorization header. Env-Vars are supported.",
+      "type": "object"
+    }
+  },
+  "required": [  "baseUrl", "content", "contentId", "title" ]
 }

@@ -1,11 +1,26 @@
 # nx-confluence
 
-This library was generated with [Nx](https://nx.dev).
+Nx executor to interact with Atlassian Confluence via its "REST" Api
 
-## Building
-
-Run `nx build nx-confluence` to build the library.
-
-## Running unit tests
-
-Run `nx test nx-confluence` to execute the unit tests via [Jest](https://jestjs.io).
+## update-content
+```json
+{ 
+  "targets": 
+  {
+    "confluence": {
+      "executor": "@ndrsg/nx-confluence:update-content",
+      "options": {
+        "baseUrl": "https://conflucene.local",
+        "beforeContent": "<ac:structured-macro ac:name=\"html\" ac:schema-version=\"1\" ac:macro-id=\"...\"><ac:plain-text-body><![CDATA[",
+        "content": "./CHANGELOG.html",
+        "afterContent": "]]></ac:plain-text-body></ac:structured-macro>",
+        "contentId": "1234",
+        "title": "The New Changelog for Version $CI_VERSION",
+        "headers": {
+          "Authorization": "Bearer $CONFLUENCE_TOKEN"
+        }
+      }
+    }
+  },
+}
+```
