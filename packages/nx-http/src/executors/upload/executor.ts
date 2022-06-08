@@ -3,7 +3,7 @@ import FormData = require('form-data');
 import { createReadStream, readFileSync } from 'fs';
 import axios from 'axios';
 import { logger } from '@nrwl/devkit';
-import { envSubstValues } from '../../common/envsubst';
+import { envSubstValues } from '@ndrsg/devkit';
 
 export default async function runExecutor(
   options: UploadExecutorSchema,

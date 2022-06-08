@@ -3,7 +3,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { URLSearchParams } from 'url';
 import { logger } from '@nrwl/devkit'
 import { readFileSync, writeFileSync } from 'fs';
-import { envSubst, envSubstValues } from '../../common/envsubst';
+import { envSubst, envSubstValues } from '@ndrsg/devkit';
 
 export default async function runExecutor(options: RequestExecutorSchema) {
 

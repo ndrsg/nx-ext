@@ -2,7 +2,7 @@ import { DownloadExecutorSchema } from './schema';
 import { createWriteStream, ReadStream } from 'fs';
 import { logger } from '@nrwl/devkit';
 import axios from 'axios';
-import { envSubstValues } from '../../common/envsubst';
+import { envSubstValues } from '@ndrsg/devkit';
 
 export default async function runExecutor(
   options: DownloadExecutorSchema,

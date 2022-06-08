@@ -1,1 +1,1 @@
-export * from './lib/devkit';
+export * from './lib/envsubst';
