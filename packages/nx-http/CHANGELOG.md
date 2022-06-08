@@ -9,6 +9,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * **nx-http:** depend on devkit ([fd6af40](https://github.com/ndrsg/nx-ext/commit/fd6af40413647f3c9658cd763a25a9251240da92))
 
+## [0.4.0](https://github.com/ndrsg/nx-ext/compare/nx-http-0.3.0...nx-http-0.4.0) (2022-06-08)
+
+
+### Features
+
+* **nx-http:** depend on devkit ([fd6af40](https://github.com/ndrsg/nx-ext/commit/fd6af40413647f3c9658cd763a25a9251240da92))
+
 ## [0.3.0](https://github.com/ndrsg/nx-ext/compare/nx-http-0.2.0...nx-http-0.3.0) (2022-06-07)
 
 
