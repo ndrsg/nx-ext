@@ -2,18 +2,30 @@
   "sourceRoot": "packages/nx-http/src",
   "projectType": "library",
   "targets": {
-    "github": {
-      "executor": "@jscutlery/semver:github",
+    "version": {
+      "executor": "@jscutlery/semver:version",
       "options": {
-        "tag": "${tag}",
-        "notes": "${notes}",
-        "title": "@ndrsg/nx-http@${version}"
+        "preset": "conventional",
+        "push": true,
+        "noVerify": true,
+        "postTargets": [
+          "nx-http:publish",
+          "nx-http:github"
+        ]
       }
     },
     "publish": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
         "access": "public"
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}",
+        "title": "@ndrsg/nx-http@${version}"
       }
     },
     "build": {
@@ -64,18 +76,6 @@
       "options": {
         "jestConfig": "packages/nx-http/jest.config.ts",
         "passWithNoTests": true
-      }
-    },
-    "version": {
-      "executor": "@jscutlery/semver:version",
-      "options": {
-        "preset": "conventional",
-        "push": true,
-        "noVerify": true,
-        "postTargets": [
-          "nx-http:publish",
-          "nx-http:github"
-        ]
       }
     }
   },
