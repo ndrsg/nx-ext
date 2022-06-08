@@ -17,6 +17,9 @@
     "email": "26137827+ndrsg@users.noreply.github.com",
     "url": "https://github.com/ndrsg"
   },
+  "dependencies": {
+    "@ndrsg/devkit": "^0.0.1"
+  },
   "peerDependencies": {
     "@nrwl/devkit": "^14.0.0"
   },

@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-http/src",
   "projectType": "library",
   "targets": {
@@ -30,7 +31,9 @@
     },
     "build": {
       "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/packages/nx-http",
         "main": "packages/nx-http/src/index.ts",
@@ -65,14 +68,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/nx-http/**/*.ts"]
+        "lintFilePatterns": [
+          "packages/nx-http/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/nx-http"],
+      "outputs": [
+        "coverage/packages/nx-http"
+      ],
       "options": {
         "jestConfig": "packages/nx-http/jest.config.ts",
         "passWithNoTests": true
