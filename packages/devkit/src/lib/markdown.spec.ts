@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import { mdToHtml, getHighlightCss } from './markdown';
 
 describe('Request Executor', () => {
