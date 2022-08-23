@@ -7,11 +7,10 @@ function highlight(code: string, language: string): string {
   return hljs.highlight(code, { language }).value;
 }
 
-export function mdToHtml(path: string, codeCss?: string): string {
+export function mdToHtml(src: string, codeCss?: string): string {
   if(!codeCss) {
     codeCss = "github.css"
   }
-  const src = readFileSync(path).toString();
   const html = marked(src, {
     highlight
   });
