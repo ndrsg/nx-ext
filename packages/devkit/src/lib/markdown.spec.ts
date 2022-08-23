@@ -4,7 +4,8 @@ import { mdToHtml, getHighlightCss } from './markdown';
 describe('Request Executor', () => {
   
   it("converts markdown to html", () => {
-    const result = mdToHtml("./testfiles/hello.md");
+    const src = readFileSync("./testfiles/hello.md").toString();
+    const result = mdToHtml(src);
     expect(result).toContain("hello");
     expect(result).toContain("<");
     expect(result).toContain("</");
@@ -12,7 +13,8 @@ describe('Request Executor', () => {
   });
 
   it("highlights code", () => {
-    const result = mdToHtml("./testfiles/code.md");
+    const src = readFileSync("./testfiles/code.md").toString();
+    const result = mdToHtml(src);
     writeFileSync("./fileoutput/code.html", result);
     expect(result).toContain("hljs");
   });
